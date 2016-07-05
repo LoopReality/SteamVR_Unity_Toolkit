@@ -84,8 +84,8 @@ namespace VRTK
 
         protected virtual bool ValidLocation(Transform target)
         {
-            //If the target is one of the player objects then it's never a valid location
-            if(target.GetComponent<VRTK_PlayerObject>())
+            //If the target is one of the player objects or a UI Canvas then it's never a valid location
+            if(target.GetComponent<VRTK_PlayerObject>() || target.GetComponent<VRTK_UIGraphicRaycaster>())
             {
                 return false;
             }
